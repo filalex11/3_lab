@@ -4,9 +4,9 @@ public class Matrix {
 	
 	final protected int[][] matrix;
 	
-	final protected int rows;
+	protected int rows;
 
-	final protected int columns;
+	protected int columns;
 	
 	public Matrix(int r, int col) {
 		if ((r <= 0) || (col <= 0)) {
@@ -30,10 +30,8 @@ public class Matrix {
 	}
 	
 	public Matrix product(Matrix m) {
-		if (columns != m.getRows()) {
-			MatrixException me = new MatrixException("Multiplication of matrixes with different sizes!");
-			throw me;
-		}
+		if (columns != m.getRows())
+			throw new MatrixException("Multiplication of matrixes with different sizes!");
 		Matrix res = new Matrix(rows, m.getColumns());
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < m.getColumns(); ++j) {
@@ -48,18 +46,14 @@ public class Matrix {
 	}
 	
 	public void setElement(int row, int column, int value) {
-		if ((row < 0) || (column < 0)) {
-			MatrixException me = new MatrixException("Invalid index!");
-			throw me;
-		}
+		if ((row < 0) || (column < 0))
+			throw new MatrixException("Invalid index!");
 		matrix[row][column] = value;
 	}
 	
 	public int getElement(int row, int column) {
-		if ((row < 0) || (column < 0)) {
-			MatrixException me = new MatrixException("Invalid index!");
-			throw me;
-		}
+		if ((row < 0) || (column < 0))
+			throw new MatrixException("Invalid index!");
 		return matrix[row][column];
 	}
 	
