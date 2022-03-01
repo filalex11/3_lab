@@ -23,7 +23,7 @@ public class Matrix {
 		Matrix res = new Matrix(rows, columns);
 		for (int i = 0; i < rows; ++i) {
 			for (int j = 0; j < columns; ++j) {
-				res.setElement(i, j, matrix[i][j] + m.getElement(i, j));
+				res.setElement(i, j, this.getElement(i, j) + m.getElement(i, j));
 			}
 		}
 		return res;
@@ -37,7 +37,7 @@ public class Matrix {
 			for (int j = 0; j < m.getColumns(); ++j) {
 				int mult = 0;
 				for (int k = 0; k < columns; ++k) {
-					mult += matrix[i][k] * m.getElement(k, j);
+					mult += this.getElement(i, k) * m.getElement(k, j);
 				}
 				res.setElement(i, j, mult);
 			}
@@ -57,11 +57,11 @@ public class Matrix {
 		return matrix[row][column];
 	}
 	
-	public int getRows() {
+	final public int getRows() {
 		return rows;
 	}
 	
-	public int getColumns() {
+	final public int getColumns() {
 		return columns;
 	}
 	

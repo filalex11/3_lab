@@ -4,8 +4,8 @@ import org.suai.lab_3.matrixes.*;
 
 class Main {
 	public static void main(String[] args) {
-		SquareMatrix s1 = new SquareMatrix(3);
-		HalfMatrix h1 = new HalfMatrix(3, 3);
+		SquareMatrix s1 = new SquareMatrix(4);
+		HalfMatrix h1 = new HalfMatrix(4, 4);
 		h1.setElement(0, 0, 4);
 		h1.setElement(0, 1, 5);
 		h1.setElement(0, 2, 6);
